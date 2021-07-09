@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapp">
+        <div class="circle">
+            <div class="circleTwo"></div>
+        </div>
+        <div class="circle">
+            <div class="circleTwo"></div>
+        </div>
+        <div class="circle">
+            <div class="circleTwo"></div>
+        </div>
+    </div>
+    <button onclick="trafficLight()">Клоц</button>
+
+    <script>
+        let i = -1;
+        function trafficLight() {
+            i++;
+            let arr = ['red', 'orange', 'green'],
+                circleTwo = document.querySelectorAll('.circleTwo');
+            if (circleTwo[i - 1]) circleTwo[i - 1].style.backgroundColor = '';
+            if (i == arr.length) i = 0;
+            circleTwo[i].style.backgroundColor = arr[i];
+        }
+    </script>
+</body>
+
+</html>
